@@ -10,7 +10,7 @@ def rsi(prices, period=14):
 
     # avg_loss가 0인 경우 rs를 매우 큰 값으로 설정
     rs = avg_gain / avg_loss.replace(0, np.nan)
-    rs = rs.fillna(1e10)  # 무한대 값을 방지하기 위해 매우 큰 값으로 설정
+    rs = rs.fillna(0)  # 무한대 값을 방지하기 위해 매우 큰 값으로 설정
 
     rsi = 100 - (100 / (1 + rs))
     

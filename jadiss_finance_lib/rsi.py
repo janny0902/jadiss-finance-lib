@@ -3,8 +3,8 @@ import numpy as np
 
 def rsi(prices, period=14):
     delta = prices.diff(1)
-    gain = delta.where(delta > 0, 0.0)
-    loss = -delta.where(delta < 0, 0.0)
+    gain = delta.where(delta > 0, 0.01)
+    loss = -delta.where(delta < 0, 0.01)
     avg_gain = gain.rolling(window=period).mean()
     avg_loss = loss.rolling(window=period).mean()
 

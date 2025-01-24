@@ -24,10 +24,3 @@ def macd_oci(prices, short_window=12, long_window=26, signal_window=9):
     oci = oci.replace([np.inf, -np.inf], np.nan).fillna(0)
     
     return macd, signal_line, oci
-
-# 예시 사용
-prices = [45.15, 46.23, 47.15, 48.05, 47.78, 48.30, 47.92, 48.28, 48.80, 48.50, 49.10, 49.32, 48.97, 49.45, 49.72, 49.94, 50.05, 50.38, 50.57, 50.79, 50.98]
-macd, signal_line, oci = macd_oci(prices)
-print("MACD:\n", macd)
-print("Signal Line:\n", signal_line)
-print("OCI:\n", oci)

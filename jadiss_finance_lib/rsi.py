@@ -15,5 +15,7 @@ def rsi(prices, period=14):
     
     # NaN 및 무한대 값 처리
     rsi = rsi.replace([np.inf, -np.inf], np.nan).fillna(0)
-    
+    print("---")
+    print(rsi)
+    print("---")
     return rsi

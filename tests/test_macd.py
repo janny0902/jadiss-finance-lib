@@ -1,5 +1,5 @@
 import pandas as pd
-from my_finance_lib.macd import macd
+from jadiss_finance_lib.macd import macd
 
 def test_macd():
     prices = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])

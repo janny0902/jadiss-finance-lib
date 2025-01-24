@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='my_finance_lib',
+    name='jadiss-finance-lib',
     version='0.1',
     packages=find_packages(),
     install_requires=[

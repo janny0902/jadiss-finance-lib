@@ -8,7 +8,7 @@ def rsi(prices, period=7):
     avg_gain = gain.rolling(window=period, min_periods=1).mean()
     avg_loss = loss.rolling(window=period, min_periods=1).mean()
     rs = avg_gain / avg_loss.replace(0, np.nan)
-
+111
     rsi = 100 - (100 / (1 + rs))
     
     # NaN 및 무한대 값 처리

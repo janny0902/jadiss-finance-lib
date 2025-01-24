@@ -7,7 +7,7 @@ def rsi(prices, period=7):
     loss = -delta.where(delta < 0, 0.0)
     avg_gain = gain.rolling(window=period, min_periods=1).mean()
     avg_loss = loss.rolling(window=period, min_periods=1).mean()
-
+1111
     rs = avg_gain / avg_loss.replace(0, np.nan)
 
     rsi = 100 - (100 / (1 + rs))

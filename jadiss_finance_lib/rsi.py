@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 def rsi(prices, period=14):
+    prices = pd.Series(prices)
     delta = prices.diff(1)
     gain = delta.where(delta > 0, 0.0)
     loss = -delta.where(delta < 0, 0.0)

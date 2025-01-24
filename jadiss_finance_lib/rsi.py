@@ -1,8 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def rsi(prices, period=3):
-    prices = [80, 100, 120, 110, 100, 100, 99, 98, 97, 96, 95]
+def rsi(prices, period=14):
     delta = prices.diff(1)
     gain = delta.where(delta > 0, 0.0)
     loss = -delta.where(delta < 0, 0.0)

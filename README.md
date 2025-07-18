@@ -109,21 +109,45 @@ if div_result['bullish']:
 
 ### 7. 포함된 지표들
 
-#### 기술적 지표
+#### 추세 분석 지표
 - **RSI**: 상대강도지수
 - **MACD**: 이동평균수렴확산
 - **MACD OCI**: MACD 옵션체인지표
-- **Stochastic Slow**: 스토캐스틱 슬로우
-- **Stochastic Fast**: 스토캐스틱 패스트
-- **Bollinger Bands**: 볼린저 밴드
 - **Parabolic**: 패러볼릭
 - **Parabolic SAR**: 패러볼릭 SAR
-- **Ichimoku**: 일목균형표
+- **ADX**: 평균 방향성 지수
+
+#### 모멘텀 및 오실레이터 지표
+- **RSI**: 상대강도지수
+- **Stochastic Slow**: 스토캐스틱 슬로우
+- **Stochastic Fast**: 스토캐스틱 패스트
+- **ROC**: 변화율
+- **CCI**: 상품채널지수
+
+#### 변동성 분석 지표
+- **Bollinger Bands**: 볼린저 밴드
+- **ATR**: 평균 실제 범위
+- **Keltner Channel**: 켈트너 채널
+- **Donchian Channel**: 돌치안 채널
 - **Standard Deviation**: 표준편차 기반 표준화 점수
+
+#### 거래량 기반 지표
+- **OBV**: 온밸런스 볼륨
+- **CMF**: 차이킨 자금 흐름
+- **VR**: 거래량 비율
+
+#### 지지/저항 분석 지표
+- **Fibonacci Retracement**: 피보나치 되돌림
+- **Pivot Points**: 피봇 포인트
+
+#### 종합 분석 지표
+- **Ichimoku**: 일목균형표
 
 #### 기술적 분석 기법
 - **Elliott Wave**: 엘리어트 파동 분석 - 가격 시리즈에서 1,2파, 3,4파, b,c파 패턴 감지
 - **Divergence**: 다이버전스 분석 - 가격과 지표 간의 불일치를 통한 반전 신호 감지
+- **Chart Patterns**: 차트 패턴 분석 - 헤드 앤 슈더, 이중 천장/바닥 등 패턴 감지
+- **Candle Patterns**: 캥들 패턴 분석 - 해머형, 유성형, 장악형 등 패턴 감지
 
 #### 밸류에이션 지표
 - **EPS**: 주당순이익

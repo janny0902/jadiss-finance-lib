@@ -107,6 +107,56 @@ if div_result['bullish']:
     print("상승 반전 신호 감지!")
 ```
 
+### 6-1. 지표 신호 생성 예시 (가격과 일자 입력)
+```python
+import pandas as pd
+from jadiss_finance_lib.indicator_signals import rsi_signals, macd_signals, bollinger_signals
+
+# 가격과 일자 데이터 준비
+prices = [100, 101, 102, 103, 104, 105, 106, 105, 104, 103]
+dates = [
+    '2025-07-18 10:00:00', '2025-07-18 11:00:00', '2025-07-18 12:00:00',
+    '2025-07-18 13:00:00', '2025-07-18 14:00:00', '2025-07-18 15:00:00',
+    '2025-07-19 10:00:00', '2025-07-19 11:00:00', '2025-07-19 12:00:00',
+    '2025-07-19 13:00:00'
+]
+
+# 일봉 데이터로 RSI 신호 생성
+rsi_result = rsi_signals(prices, dates, timeframe='D', period=14, overbought=70, oversold=30)
+print(f"일봉 RSI 매수 신호: {rsi_result['buy_signals']}")
+print(f"일봉 RSI 매도 신호: {rsi_result['sell_signals']}")
+
+# 60분봉 데이터로 MACD 신호 생성
+macd_result = macd_signals(prices, dates, timeframe=60, fast=12, slow=26, signal=9)
+print(f"60분봉 MACD 매수 신호: {macd_result['buy_signals']}")
+print(f"60분봉 MACD 매도 신호: {macd_result['sell_signals']}")
+
+# 볼린저 밴드 신호 생성
+bb_result = bollinger_signals(prices, dates, timeframe=60, period=5, std_dev=2)
+print(f"볼린저 밴드 매수 신호: {bb_result['buy_signals']}")
+print(f"볼린저 밴드 매도 신호: {bb_result['sell_signals']}")
+```
+
+### 6-2. 다양한 분봉 단위 사용 예시
+```python
+from jadiss_finance_lib.indicator_signals import stochastic_signals
+
+# 가격과 일자 데이터
+prices = [100, 101, 102, 103, 104, 105, 106, 105, 104, 103]
+dates = [
+    '2025-07-18 10:00:00', '2025-07-18 10:01:00', '2025-07-18 10:02:00',
+    '2025-07-18 10:03:00', '2025-07-18 10:04:00', '2025-07-18 10:05:00',
+    '2025-07-18 10:06:00', '2025-07-18 10:07:00', '2025-07-18 10:08:00',
+    '2025-07-18 10:09:00'
+]
+
+# 다양한 분봉 단위로 신호 생성
+for minute in [1, 3, 5]:
+    result = stochastic_signals(prices, dates, timeframe=minute)
+    print(f"{minute}분봉 스토캐스틱 매수 신호: {result['buy_signals']}")
+    print(f"{minute}분봉 스토캐스틱 매도 신호: {result['sell_signals']}")
+```
+
 ### 7. 포함된 지표들
 
 #### 추세 분석 지표

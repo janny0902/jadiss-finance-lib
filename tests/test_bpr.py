@@ -3,7 +3,7 @@
 # 출력 타입: dict - {'BPR': pd.Series}
 
 import pandas as pd
-from jadiss_finance_lib.bpr import bpr
+from jadiss_finance_lib.pbr import bpr
 
 def test_bpr():
     # 테스트 데이터: BPS와 주가

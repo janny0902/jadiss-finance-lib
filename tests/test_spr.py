@@ -3,7 +3,7 @@
 # 출력 타입: dict - {'SPR': pd.Series}
 
 import pandas as pd
-from jadiss_finance_lib.spr import spr
+from jadiss_finance_lib.psr import spr
 
 def test_spr():
     # 테스트 데이터: SPS와 주가

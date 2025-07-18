@@ -3,7 +3,7 @@
 # 출력 타입: dict - {'EPR': pd.Series}
 
 import pandas as pd
-from jadiss_finance_lib.epr import epr
+from jadiss_finance_lib.per import epr
 
 def test_epr():
     # 테스트 데이터: EPS와 주가

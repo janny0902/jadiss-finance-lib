@@ -65,6 +65,9 @@ pytest tests/test_per.py tests/test_pbr.py tests/test_psr.py -v
 
 # ROE 및 표준편차 테스트
 pytest tests/test_roe.py tests/test_standard_deviation.py -v
+
+# 기술적 분석 기법 테스트
+pytest tests/test_elliott_wave.py tests/test_divergence.py -v
 ```
 
 ### 6. 사용 예시
@@ -90,6 +93,18 @@ net_income = pd.Series([1000, 1100, 1200])
 shares = pd.Series([100, 100, 110])
 eps_result = eps(net_income, shares)
 print(eps_result['EPS'])
+
+# 엘리어트 파동 감지
+from jadiss_finance_lib.elliott_wave import elliott_wave_detector
+wave_result = elliott_wave_detector(prices, window_size=10)
+if wave_result['wave_1_2']:
+    print("1,2파 진행 중")
+
+# 다이버전스 감지
+from jadiss_finance_lib.divergence import divergence
+div_result = divergence(prices, 'rsi', period=14)
+if div_result['bullish']:
+    print("상승 반전 신호 감지!")
 ```
 
 ### 7. 포함된 지표들
@@ -105,6 +120,10 @@ print(eps_result['EPS'])
 - **Parabolic SAR**: 패러볼릭 SAR
 - **Ichimoku**: 일목균형표
 - **Standard Deviation**: 표준편차 기반 표준화 점수
+
+#### 기술적 분석 기법
+- **Elliott Wave**: 엘리어트 파동 분석 - 가격 시리즈에서 1,2파, 3,4파, b,c파 패턴 감지
+- **Divergence**: 다이버전스 분석 - 가격과 지표 간의 불일치를 통한 반전 신호 감지
 
 #### 밸류에이션 지표
 - **EPS**: 주당순이익
@@ -124,6 +143,9 @@ pip install -e .
 # 캐시 클리어 후 테스트
 pytest --cache-clear tests/
 
-# 특정 테스트 디버깅
+# 특정 테스트 디버깅 (상세 출력 포함)
 pytest tests/test_rsi.py::test_rsi -v -s
+
+# 모든 테스트 상세 출력 포함 실행 (입력값과 결과값 확인)
+pytest tests/ -v -s
 ```
